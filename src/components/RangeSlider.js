@@ -17,9 +17,9 @@ const CustomRange = styled(Slider)`
         background-color: ${COLOR.indigo500};
     }
     .rc-slider-handle{
-        width: 20px;
-        height: 20px;
-        margin-top: -8px;
+        width: 24px;
+        height: 24px;
+        margin-top: -10px;
         border: solid 3px ${COLOR.indigo500};
         opacity: 1;
         &:active{
@@ -33,6 +33,13 @@ const CustomRange = styled(Slider)`
         border-color: ${COLOR.indigo500};
         box-shadow: 0px 4px 10px 0px #343A4033;
     }
+    @media only screen and (min-width: 768px) {
+        .rc-slider-handle{
+            width: 20px;
+            height: 20px;
+            margin-top: -8px;
+        }
+    }
 `
 
 export default function RangeSlider() {
@@ -45,7 +52,7 @@ export default function RangeSlider() {
                     range[value[1]] + "GB" :
                     value[0] === 0 && value[1] === range.length - 1 ?
                     "전체" :
-                    range[value[0]] + " ~ " + range[value[1]] + "GB"
+                    range[value[0]] + "GB ~ " + range[value[1]] + "GB"
                 }
             </Value>
             <CustomRange
