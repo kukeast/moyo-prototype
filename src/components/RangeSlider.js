@@ -9,7 +9,7 @@ const Value = styled.p`
 
 export default function RangeSlider() {
     const range = [0,1,2,3,4,5,6,7,8,9,10,20,30,40,50,60,70,80,90,100,200,300,400,500]
-    const [value, setValue] = useState([14,range.length - 1])
+    const [value, setValue] = useState([10,19])
     return (
         <>
             <Value>
