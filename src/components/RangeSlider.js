@@ -2,9 +2,37 @@ import Slider from 'rc-slider'
 import React, { useState } from 'react'
 import 'rc-slider/assets/index.css';
 import styled from 'styled-components';
+import { COLOR } from '../constants/color';
 
 const Value = styled.p`
     text-align: center;
+    color: ${COLOR.black};
+    margin-bottom: 16px;
+`
+const CustomRange = styled(Slider)`
+    .rc-slider-rail{
+        background-color: ${COLOR.gray200};
+    }
+    .rc-slider-track{
+        background-color: ${COLOR.indigo500};
+    }
+    .rc-slider-handle{
+        width: 20px;
+        height: 20px;
+        margin-top: -8px;
+        border: solid 3px ${COLOR.indigo500};
+        opacity: 1;
+        &:active{
+            box-shadow: none;
+        }
+        &:focus{
+            box-shadow: none;
+        }
+    }
+    .rc-slider-handle-dragging.rc-slider-handle-dragging.rc-slider-handle-dragging {
+        border-color: ${COLOR.indigo500};
+        box-shadow: 0px 4px 10px 0px #343A4033;
+    }
 `
 
 export default function RangeSlider() {
@@ -20,7 +48,7 @@ export default function RangeSlider() {
                     range[value[0]] + " ~ " + range[value[1]] + "GB"
                 }
             </Value>
-            <Slider
+            <CustomRange
                 range
                 allowCross={false}
                 min={0}
